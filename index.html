@@ -19,17 +19,23 @@
       </p>
     </section>
 
-    <section class="members">
+    <!-- Tabs Navigation -->
+    <div class="tabs">
+      <button class="tab-button active" data-tab="members">Members</button>
+      <button class="tab-button" data-tab="events">Events</button>
+      <button class="tab-button" data-tab="gallery">Gallery</button>
+    </div>
+
+    <!-- Members Tab Content -->
+    <section class="tab-content active" id="members">
       <h2>Executive Committee 2025</h2>
       <div class="team">
-        <!-- Sample team member card -->
         <div class="member-card">
           <img src="images/admin.jpg" alt="Admin" />
           <h3>Md. Atiqur Rahman & Mustafizur Rahman</h3>
           <p>Admin</p>
         </div>
-        <!-- Add more member cards similarly -->
-         <div class="member-card">
+        <div class="member-card">
           <img src="images/alumni.jpg" alt="Alumni" />
           <h3>Sabah Tarana Tarique Neesa & Morshed Chyon</h3>
           <p>Alumni</p>
@@ -46,6 +52,36 @@
         </div>
       </div>
     </section>
+
+    <!-- Dummy Tab Content -->
+    <section class="tab-content" id="events">
+      <h2>Events</h2>
+      <p>Upcoming events will be listed here.</p>
+    </section>
+
+    <section class="tab-content" id="gallery">
+      <h2>Gallery</h2>
+      <p>Gallery content will appear here.</p>
+    </section>
   </main>
+
+  <script>
+    // Tab switching functionality
+    const tabButtons = document.querySelectorAll('.tab-button');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    tabButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        // Remove active class from all buttons and tabs
+        tabButtons.forEach(btn => btn.classList.remove('active'));
+        tabContents.forEach(tab => tab.classList.remove('active'));
+
+        // Add active class to the clicked button and related tab
+        button.classList.add('active');
+        const target = document.getElementById(button.dataset.tab);
+        target.classList.add('active');
+      });
+    });
+  </script>
 </body>
 </html>
