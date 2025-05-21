@@ -97,3 +97,36 @@ body, html {
 .member-card p {
   font-size: 0.95rem;
 }
+/* Tabs styling */
+.tabs {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  gap: 20px;
+}
+
+.tab-button {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: none;
+  padding: 10px 20px;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.tab-button:hover,
+.tab-button.active {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.tab-content {
+  display: none;
+  margin-top: 40px;
+  text-align: center;
+}
+
+.tab-content.active {
+  display: block;
+}
